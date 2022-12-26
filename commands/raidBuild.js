@@ -60,7 +60,7 @@ module.exports = {
 			}, datafind);
 			console.log(datafind.indexes);
 			if (datafind.indexes.length == 0){
-				return interaction.reply('No Results found, Please make sure you have spelled the name of the pokemon correctly. You can manually check the sheet by visiting:  https://docs.google.com/spreadsheets/d/1rkzDRWp6TOUZg1Cf2u7aVRaiksiawVt5bCekgvYHMiA/edit#gid=0 ')
+				return interaction.reply('No Results found, Please make sure you have spelled the name of the pokemon correctly. You can manually check the sheet by visiting:  https://docs.google.com/spreadsheets/d/1bMaLkMyy4cs7O5RXLNMS95xPtVz-FVhUB_Q-4B9a-UE/edit?usp=sharing')
 			}
 			else
 			{
