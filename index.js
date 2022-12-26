@@ -2,7 +2,6 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits, Events } = require('discord.js');
 const { token } = require('./config.json');
-const config = require('./config.json');
 const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
@@ -38,45 +37,5 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
-
-client.on('messageCreate', async message => {
-	if (message.author.bot) return;
-	// let args;
-	// Single word deletes
-	if (config.SingleWordMessage.indexOf(message.content.toLowerCase()) > -1) {
-		message.delete();
-		console.log(message.content);
-		console.log(message.author.username);
-		return;
-	}
-	// Banned words deletes
-	for (let i = 0; i < config.BannedWords.length; i++) {
-		if (message.content.toLowerCase().includes(config.BannedWords[i])) {
-			message.delete();
-			message.channel.send('You have used a banned word. Message Purged!');
-			return;
-		}
-	}
-});
-
-client.on('messageUpdate', async (old, message) => {
-	if (message.author.bot) return;
-	// let args;
-	// Single word deletes
-	if (config.SingleWordMessage.indexOf(message.content.toLowerCase()) > -1) {
-		message.delete();
-		console.log(message.content);
-		console.log(message.author.username);
-		return;
-	}
-	// Banned words deletes
-	for (let i = 0; i < config.BannedWords.length; i++) {
-		if (message.content.toLowerCase().includes(config.BannedWords[i])) {
-			message.delete();
-			message.channel.send('You have used a banned word. Message Purged!');
-			return;
-		}
-	}
-});
 
 client.login(token);

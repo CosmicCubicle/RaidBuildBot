@@ -64,13 +64,16 @@ module.exports = {
 			}
 			else
 			{
+				var response = ""
 				for (var i = 0; i < datafind.indexes.length; i++){
 					var ind = datafind.indexes[i];
 					if (data.Strategy[ind] == null ){
 						data.Strategy[ind] = "N/A"
 					};
-					return interaction.reply(`This Pokemon is rated in Tier: ${data.Grade[ind]}\n\nYour ${data.Role[ind]} ${data.BuildType[ind]} Build is: \n\n${data.Pokemon[ind]} @ ${data.HeldItem[ind]}\nAbility: ${data.Ability[ind]}\nLevel: 100\nTera Type: ${data.TeraType[ind]}\nEVs: ${(data.EVs[ind].split('\n'))[0]} / ${(data.EVs[ind].split('\n'))[1]} / ${(data.EVs[ind].split('\n'))[2]}\n${data.Nature[ind]} Nature\n- ${data.MoveSets[ind].split('\n')[0]}\n- ${data.MoveSets[ind].split('\n')[1]}\n- ${data.MoveSets[ind].split('\n')[2]}\n- ${data.MoveSets[ind].split('\n')[3]}\n\nYou can ignore the Following IVs when training this Pokemon: ${data.IgnoreIv[ind]}\n\nStrategy and Build Notes:\n${data.Strategy[ind]}`);
+					
+					var response = response + `This Pokemon is rated in Tier: ${data.Grade[ind]}\n\nYour ${data.Role[ind]} ${data.BuildType[ind]} Build is: \n\n${data.Pokemon[ind]} @ ${data.HeldItem[ind]}\nAbility: ${data.Ability[ind]}\nLevel: 100\nTera Type: ${data.TeraType[ind]}\nEVs: ${(data.EVs[ind].split('\n'))[0]} / ${(data.EVs[ind].split('\n'))[1]} / ${(data.EVs[ind].split('\n'))[2]}\n${data.Nature[ind]} Nature\n- ${data.MoveSets[ind].split('\n')[0]}\n- ${data.MoveSets[ind].split('\n')[1]}\n- ${data.MoveSets[ind].split('\n')[2]}\n- ${data.MoveSets[ind].split('\n')[3]}\n\nYou can ignore the Following IVs when training this Pokemon: ${data.IgnoreIv[ind]}\n\nStrategy and Build Notes:\n${data.Strategy[ind]}\n\n ---------------\n\n`;
 				}
+				return interaction.reply(response)
 			}
 		});
 	},
