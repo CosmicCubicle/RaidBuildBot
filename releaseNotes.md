@@ -20,4 +20,4 @@ Version history
 
 1.5
     Added new /eventRaid command
-    
+    Moved Sheet query to Timer vs on function call
