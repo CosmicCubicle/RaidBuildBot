@@ -18,14 +18,6 @@ Version history
     Adding Slash COmmands
     Lists will move to DB
 
-
-Future Functionality
-    Role Reactions
-    Twitch go Lives
-    Logging with Image storage
-    Auto deletes
-    Youtube - new videos
-    Twitter - New tweets
-    Instagram - new posts
-    Patreon - New posts
-    Trigger twitch alerts?
+1.5
+    Added new /eventRaid command
+    
