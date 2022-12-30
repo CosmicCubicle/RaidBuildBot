@@ -95,9 +95,4 @@ for (const file of eventFiles) {
 	}
 }
 
-
-client.on("ready", () => {
-	client.user.setActivity("Helping Pokemon raiders in ${client.guilds.cache.size} guilds", { type: "WATCHING" });
-	});
-
 client.login(token);
