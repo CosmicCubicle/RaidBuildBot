@@ -14,7 +14,7 @@ module.exports = {
 			builddata.Pokemon.filter(function (element, index){
 				if (element.toLowerCase() == interaction.options.getString('pokemon').toLowerCase()) {
 					this.indexes.push(index);
-					return true;
+				//	return true;
 				}
 			}, datafind);
 			console.log(datafind.indexes);
